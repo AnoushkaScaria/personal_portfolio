@@ -1,0 +1,50 @@
+{
+  "player": {
+  "name": "Anoushka Scaria",
+  "class": "Software Engineer",
+  "level": 20,
+  "special": "Harp solo",
+  "bio": "Two or three sentences about you. What you make, what you're studying, what you're looking for.",
+  "stats": [
+    { "label": "Creativity", "value": 9 },
+    { "label": "Debugging patience", "value": 6 },
+    { "label": "Harp", "value": 8 },
+    { "label": "Coffee", "value": 10 }
+  ]
+  },
+  "name": "Your Name",
+  "folders": [
+    {
+      "id": "projects",
+      "label": "Projects",
+      "color": "#ff8fa3",
+      "items": [
+        { "title": "Project One", "text": "What it is and what you built.", "tags": ["Unity", "C#"] }
+      ]
+    },
+    {
+      "id": "work",
+      "label": "Work",
+      "color": "#7fe0c0",
+      "items": [
+        { "title": "Job Title, Company", "text": "What you did.", "tags": [] }
+      ]
+    },
+    {
+      "id": "certs",
+      "label": "Certs",
+      "color": "#ffd166",
+      "items": [
+        { "title": "Certification Name", "text": "Issuer, year.", "tags": [] }
+      ]
+    },
+    {
+      "id": "hobbies",
+      "label": "Hobbies",
+      "color": "#a58cff",
+      "items": [
+        { "title": "Harp", "text": "Music and recordings.", "tags": ["Music"] }
+      ]
+    }
+  ]
+}
