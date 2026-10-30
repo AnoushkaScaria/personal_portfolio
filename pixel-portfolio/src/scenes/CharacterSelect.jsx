@@ -1,6 +1,7 @@
+import { useState } from "react";
 import content from "../content/content.json";
-import Decor from "../components/Decor.jsx";
 import Pix from "../components/Pix";
+import Decor from "../components/Decor.jsx";
 import { PLAYER, PLAYER_PALETTE } from "../components/character";
 
 function StatBar({ label, value }) {
@@ -18,6 +19,7 @@ function StatBar({ label, value }) {
 
 export default function CharacterSelect({ onSelect, onSkip }) {
   const p = content.player;
+  const [selected, setSelected] = useState(false);
 
   return (
     <div className="arcade">
@@ -26,14 +28,18 @@ export default function CharacterSelect({ onSelect, onSkip }) {
 
       <div className="select-layout">
         <div className="slots">
-          {/* The only playable character: you */}
-          <div className="slot active">
+          {/* Playable character: a button so it works with mouse, touch, and keyboard */}
+          <button
+            className={"slot active" + (selected ? " picked" : "")}
+            onClick={() => setSelected(true)}
+            aria-pressed={selected}
+          >
             <div className="portrait">
               <Pix rows={PLAYER} palette={PLAYER_PALETTE} size={100} />
             </div>
             <span>{p.name}</span>
-          </div>
-          {/* Locked slots */}
+          </button>
+
           {[2, 3, 4, 5, 6, 7, 8, 9].map((n) => (
             <div className="slot locked" key={n} aria-label="Locked">
               <div className="portrait">???</div>
@@ -43,14 +49,28 @@ export default function CharacterSelect({ onSelect, onSkip }) {
         </div>
 
         <div className="card">
-          <h3>{p.name}</h3>
-          <p className="meta">Class: {p.class}</p>
-          <p className="meta">Level {p.level} · Special move: {p.special}</p>
-          <p>{p.bio}</p>
-          {p.stats.map((s) => (
-            <StatBar key={s.label} {...s} />
-          ))}
-          <button className="btn" onClick={onSelect}>Select</button>
+          {!selected ? (
+            <p className="hint">Choose a character to see their stats.</p>
+          ) : (
+            <>
+              <h3>{p.name}</h3>
+              <p className="meta">Class: {p.class}</p>
+              <p className="meta">Level {p.level} · Special move: {p.special}</p>
+              <p>{p.bio}</p>
+              {p.stats.map((s) => (
+                <StatBar key={s.label} {...s} />
+              ))}
+              <button className="btn" onClick={onSelect}>Go</button>
+              
+              <p></p>
+
+                <div className="speaker">
+                <Pix rows={PLAYER} palette={PLAYER_PALETTE} size={100} />
+                <p className="bubble" role="status">Good choice! Let’s go to my computer!</p>
+                
+              </div>
+            </>
+          )}
         </div>
       </div>
 
