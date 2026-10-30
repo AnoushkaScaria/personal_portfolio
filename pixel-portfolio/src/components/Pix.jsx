@@ -12,13 +12,13 @@ export default function Pix({ rows, palette, size = 56 }) {
   });
 
   return (
-    <svg
-      viewBox={`0 0 ${rows[0].length} ${rows.length}`}
-      width={size}
-      height={size}
-      shapeRendering="crispEdges"
-      aria-hidden="true"
-    >
+  <svg
+    viewBox={`0 0 ${rows[0].length} ${rows.length}`}
+    width={size}
+    height={(size * rows.length) / rows[0].length}
+    shapeRendering="crispEdges"
+    aria-hidden="true"
+  >
       {rects}
     </svg>
   );

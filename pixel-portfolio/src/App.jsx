@@ -7,9 +7,22 @@ export default function App() {
   // 'title' | 'select' | 'desktop'  (we'll add 'walk' next)
   const [scene, setScene] = useState("title");
 
-  if (scene === "title")
-    return <TitleScreen onStart={() => setScene("select")} onSkip={() => setScene("desktop")} />;
-  if (scene === "select")
-    return <CharacterSelect onSelect={() => setScene("desktop")} onSkip={() => setScene("desktop")} />;
-  return <LaptopScreen />;
+  return (
+    <div
+      className="app-shell"
+      onPointerMove={(event) => {
+        event.currentTarget.style.setProperty("--pointer-x", `${event.clientX}px`);
+        event.currentTarget.style.setProperty("--pointer-y", `${event.clientY}px`);
+      }}
+    >
+      {scene === "title" ? (
+        <TitleScreen onStart={() => setScene("select")} onSkip={() => setScene("desktop")} />
+      ) : scene === "select" ? (
+        <CharacterSelect onSelect={() => setScene("desktop")} onSkip={() => setScene("desktop")} />
+      ) : (
+        <LaptopScreen />
+      )}
+      <div className="cursor-highlight" aria-hidden="true" />
+    </div>
+  );
 }

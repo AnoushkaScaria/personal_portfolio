@@ -1,10 +1,14 @@
 import content from "../content/content.json";
+import Decor from "../components/Decor.jsx";
+
 
 export default function TitleScreen({ onStart, onSkip }) {
   return (
     <div className="arcade center">
+      <Decor />
+      <h3 className="subtitle">Hi! My name is</h3>
       <h1 className="game-title">{content.player.name}</h1>
-      <p className="subtitle">A portfolio adventure</p>
+      <p className="subtitle">I'm a software engineer interested in full-stack engineering and AI engineering.</p>
       <button className="btn" onClick={onStart}>Press start</button>
       <button className="skip" onClick={onSkip}>Skip to desktop</button>
     </div>

@@ -12,6 +12,15 @@
 
 html, body, #root { height: 100%; margin: 0; }
 
+.app-shell { position: relative; height: 100%; }
+.cursor-highlight {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  pointer-events: none;
+  background: radial-gradient(circle 150px at var(--pointer-x, 50%) var(--pointer-y, 50%), rgba(127, 224, 192, .22), transparent);
+}
+
 body {
   font-family: "VT323", monospace;
   font-size: 22px;
@@ -128,7 +137,10 @@ body {
   padding: 24px;
   overflow: auto;
   color: var(--paper);
-  background: linear-gradient(#2b1f4a, #5b3a7a 70%, #c4739a);
+  background:
+    linear-gradient(rgba(255,255,255,.05) 2px, transparent 2px) 0 0 / 32px 32px,
+    linear-gradient(90deg, rgba(255,255,255,.05) 2px, transparent 2px) 0 0 / 32px 32px,
+    linear-gradient(#2b1f4a, #5b3a7a 70%, #c4739a);
 }
 .arcade.center {
   display: grid;
@@ -163,6 +175,12 @@ body {
   cursor: pointer;
 }
 .btn:active { transform: translate(4px, 4px); box-shadow: none; }
+.arcade button { transition: transform 120ms steps(2); }
+.arcade button:hover,
+.arcade button:focus-visible {
+  transform: translateY(-3px);
+}
+.arcade .btn:active { transform: translate(4px, 4px); }
 
 .skip {
   position: absolute;
@@ -221,3 +239,30 @@ body {
   .game-title { animation: bob 2s steps(4) infinite; }
   @keyframes bob { 50% { transform: translateY(-6px); } }
 }
+.arcade, .screen { isolation: isolate; }
+
+.decor { position: absolute; inset: 0; z-index: -1; pointer-events: none; overflow: hidden; }
+.decor > span { position: absolute; display: block; line-height: 0; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .twinkle { animation: twinkle 2s steps(2) infinite; }
+  .twinkle.d2 { animation-delay: .6s; }
+  .twinkle.d3 { animation-delay: 1.2s; }
+  .bob { animation: bob 2s steps(4) infinite; }
+  .drift { animation: drift 14s steps(28) infinite alternate; }
+  @keyframes twinkle { 50% { opacity: .25; } }
+  @keyframes drift { to { transform: translateX(-60px); } }
+}
+
+.plants { position: absolute; inset: 0; z-index: -1; pointer-events: none; overflow: hidden; }
+.plants > span { position: absolute; display: block; line-height: 0; }
+.plants svg { width: 100%; height: auto; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .sway { transform-origin: top center; animation: sway 4s steps(4) infinite alternate; }
+  .sway.s2 { animation-delay: 1s; }
+  @keyframes sway { to { transform: rotate(3deg); } }
+}
+
+.portrait svg { width: 70%; height: auto; }
+.slot.active .portrait { background: #cdb8ff; }

@@ -1,5 +1,6 @@
 import content from "../content/content.json";
 import DesktopIcon from "../components/DesktopIcon";
+import Plants from "../components/Plants";
 
 export default function LaptopScreen() {
   return (
@@ -7,6 +8,7 @@ export default function LaptopScreen() {
       <div className="laptop">
         <div className="lid">
           <div className="screen">
+            <Plants />
             <div className="icons">
               {content.folders.map((f) => (
                 <DesktopIcon
