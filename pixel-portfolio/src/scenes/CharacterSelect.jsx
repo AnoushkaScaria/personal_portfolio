@@ -66,7 +66,7 @@ export default function CharacterSelect({ onSelect, onSkip }) {
 
                 <div className="speaker">
                 <Pix rows={PLAYER} palette={PLAYER_PALETTE} size={100} />
-                <p className="bubble" role="status">Good choice! Let’s go to my computer!</p>
+                <p className="bubble" role="status">Good choice! Let’s head to my computer!</p>
                 
               </div>
             </>
