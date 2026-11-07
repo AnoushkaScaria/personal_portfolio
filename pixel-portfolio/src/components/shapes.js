@@ -77,3 +77,19 @@ export const VINE = [
   "...d...",
 ];
 
+export const CLOUD_BIG = [
+  ".......bbbb.........",
+  ".....bbaaaabb.bbb...",
+  "...bbaaaaaaaabbaaabb",
+  ".bbaaaaaaaaaaaaaaaab",
+  "baaaaaaaaaaaaaaaaaab",
+  ".bbbbbbbbbbbbbbbbbb.",
+];
+
+export const CLOUD_SMALL = [
+  "...bbbb.....",
+  ".bbaaaabb...",
+  "baaaaaaaabb.",
+  "baaaaaaaaaab",
+  ".bbbbbbbbbb.",
+];

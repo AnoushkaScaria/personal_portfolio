@@ -1,5 +1,5 @@
 import Pix from "./Pix";
-import { SNAKE, SUCCULENT, VINE } from "./decor";
+import { SNAKE, SUCCULENT, VINE } from "./shapes";
 
 const pal = {
   g: "#5fbf8f", // leaf

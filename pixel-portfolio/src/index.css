@@ -390,3 +390,47 @@ button.slot:hover .portrait { transform: translateY(-4px); }
 @media (max-width: 640px) {
   .mac-win { inset: 0 !important; width: auto; max-height: none; box-shadow: none; }
 }
+
+.arcade.sunset { isolation: isolate; background: #8e4580; }
+
+.pixel-sky {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  image-rendering: pixelated;
+  pointer-events: none;
+  object-position: center bottom;
+}
+
+.arcade.center.sunset { place-content: center; padding-bottom: 6vh; }
+.arcade.sunset .subtitle { text-shadow: 2px 2px 0 var(--ink); }
+
+/* soft dark haze behind the text, so the sky stays bright everywhere else */
+.arcade.sunset::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: radial-gradient(ellipse 55% 38% at 50% 50%, rgba(43, 24, 70, 0.55), transparent 100%);
+}
+
+/* name: bigger, with a chunky pixel outline */
+.arcade.sunset .game-title {
+  font-size: clamp(30px, 8.0vw, 80px);
+  text-shadow:
+    -3px -3px 0 var(--ink), 3px -3px 0 var(--ink),
+    -3px 3px 0 var(--ink), 3px 3px 0 var(--ink),
+    0 6px 0 var(--ink), 6px 6px 0 var(--ink);
+}
+
+/* small lines: brighter, bolder, with a dark outline */
+.arcade.sunset p {
+  color: #fff;
+  text-shadow:
+    -2px -2px 0 var(--ink), 2px -2px 0 var(--ink),
+    -2px 2px 0 var(--ink), 2px 2px 0 var(--ink);
+}

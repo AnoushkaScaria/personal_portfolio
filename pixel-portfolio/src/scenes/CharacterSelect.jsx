@@ -1,7 +1,6 @@
 import { useState } from "react";
 import content from "../content/content.json";
 import Pix from "../components/Pix";
-import Decor from "../components/Decor.jsx";
 import { PLAYER, PLAYER_PALETTE } from "../components/character";
 
 function StatBar({ label, value }) {
@@ -23,7 +22,6 @@ export default function CharacterSelect({ onSelect, onSkip }) {
 
   return (
     <div className="arcade">
-      <Decor />
       <h2 className="select-title">Select your character</h2>
 
       <div className="select-layout">
