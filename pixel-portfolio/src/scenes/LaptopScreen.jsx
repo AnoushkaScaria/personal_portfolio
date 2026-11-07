@@ -3,6 +3,10 @@ import content from "../content/content.json";
 import DesktopIcon from "../components/DesktopIcon";
 import Window from "../components/Window";
 import Plants from "../components/Plants";
+import DuskSky from "../components/DuskSky";
+import Desk from "../components/Desk";
+import LinkIcon from "../components/LinkIcon";
+import { GITHUB, LINKEDIN } from "../components/shapes";
 
 function FolderView({ folder }) {
   return (
@@ -48,16 +52,31 @@ export default function LaptopScreen() {
 
   return (
     <div className="stage">
+      <DuskSky mood="night" moon city/>
+      <Desk />
       <div className="laptop">
         <div className="lid">
           <div className="screen">
-            <Plants />
+<div className="icons">
+  {content.folders.map((f) => (
+    <DesktopIcon key={f.id} label={f.label} color={f.color} onOpen={() => open(f)} />
+  ))}
+</div>
 
-            <div className="icons">
-              {content.folders.map((f) => (
-                <DesktopIcon key={f.id} label={f.label} color={f.color} onOpen={() => open(f)} />
-              ))}
-            </div>
+<div className="links">
+  <LinkIcon
+    label="GitHub"
+    url={content.links[0].url}
+    art={GITHUB}
+    palette={{ d: "#1b1f24", w: "#fff3d6" }}
+  />
+  <LinkIcon
+    label="LinkedIn"
+    url={content.links[1].url}
+    art={LINKEDIN}
+    palette={{ b: "#4a8fe0", w: "#ffffff" }}
+  />
+</div>
 
             {wins.map((w) => (
               <Window

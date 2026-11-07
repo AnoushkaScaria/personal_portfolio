@@ -22,9 +22,9 @@ const start = (e) => {
   return (
     <section
       className={"mac-win" + (win.max ? " max" : "")}
-      style={
+style={
   win.x == null
-    ? { top: 16 + win.offset, right: 16 + win.offset, zIndex: win.z }
+    ? { top: 16 + win.offset, right: 120 + win.offset, zIndex: win.z }
     : { left: win.x, top: win.y, right: "auto", zIndex: win.z }
 }
       onPointerDown={onFocus}

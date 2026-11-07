@@ -94,3 +94,68 @@ export const CLOUD_SMALL = [
   "baaaaaaaaaab",
   ".bbbbbbbbbb.",
 ];
+
+export const LAMP = [
+  "..bbbb..",
+  ".bbbbbb.",
+  "bbbbbbbb",
+  "...aa...",
+  "...aa...",
+  "...aa...",
+  "...aa...",
+  "...aa...",
+  "...aa...",
+  "...aa...",
+  "...aa...",
+  "...aa...",
+  "...aa...",
+  "...aa...",
+  "..aaaa..",
+  ".aaaaaa.",
+];
+
+export const BOOKS = [
+  "pppppppppppp..",
+  "kkkkkkkkkkkk..",
+  "..mmmmmmmmmmmm",
+  "..kkkkkkkkkkkk",
+  "lllllllllll...",
+  "kkkkkkkkkkk...",
+];
+
+export const MUG = [
+  "wwwwww..",
+  "mmmmmmmm",
+  "mmmmmm.m",
+  "mmmmmmm.",
+  "mmmmmm..",
+];
+
+export const GITHUB = [
+  "..dddddddd..",
+  ".dddddddddd.",
+  "ddwddddddwdd",
+  "ddwwwwwwwwdd",
+  "ddwwwwwwwwdd",
+  "ddwwdwwdwwdd",
+  "ddwwwwwwwwdd",
+  "ddddwwwwdddd",
+  ".dddwwwwddd.",
+  ".dddddddddd.",
+  "..dddddddd..",
+];
+
+export const LINKEDIN = [
+  "bbbbbbbbbbbb",
+  "bbbbbbbbbbbb",
+  "bbwwbbbbbbbb",
+  "bbwwbbbbbbbb",
+  "bbbbbbbbbbbb",
+  "bbwwbwwwbbbb",
+  "bbwwbwwwwbbb",
+  "bbwwbwbbwbbb",
+  "bbwwbwbbwbbb",
+  "bbwwbwbbwbbb",
+  "bbbbbbbbbbbb",
+  "bbbbbbbbbbbb",
+];

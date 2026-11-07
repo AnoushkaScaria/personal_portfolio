@@ -2,6 +2,8 @@ import { useState } from "react";
 import content from "../content/content.json";
 import Pix from "../components/Pix";
 import { PLAYER, PLAYER_PALETTE } from "../components/character";
+import DuskSky from "../components/DuskSky";
+
 
 function StatBar({ label, value }) {
   return (
@@ -21,7 +23,8 @@ export default function CharacterSelect({ onSelect, onSkip }) {
   const [selected, setSelected] = useState(false);
 
   return (
-    <div className="arcade">
+    <div className="arcade dusk">
+      <DuskSky mood="twilight" />
       <h2 className="select-title">Select your character</h2>
 
       <div className="select-layout">

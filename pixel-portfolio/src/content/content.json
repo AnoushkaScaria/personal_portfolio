@@ -45,5 +45,9 @@
         { "title": "Harp", "text": "Music and recordings.", "tags": ["Music"] }
       ]
     }
+  ],
+  "links": [
+    { "id": "github", "label": "GitHub", "url": "https://github.com/AnoushkaScaria" },
+    { "id": "linkedin", "label": "LinkedIn", "url": "https://linkedin.com/in/anoushka-scaria-0a8080313" }
   ]
 }
