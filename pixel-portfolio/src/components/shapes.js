@@ -19,6 +19,7 @@ export const SPARKLE = [
   "..aaa..",
   "...a...",
   "...a...",
+  "...a..."
 ];
 
 export const HEART = [
