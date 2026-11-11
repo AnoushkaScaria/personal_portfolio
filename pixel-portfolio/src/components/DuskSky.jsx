@@ -35,7 +35,7 @@ function makeNoise(seed) {
   };
 }
 
-function draw(ctx, mood, { moon, city }) {
+function draw(ctx, mood, { moon, city, hills, moonAt }) {
   const { palette: PALETTE, glow, stars, twinkles, power } = MOODS[mood];
   const N = PALETTE.length;
   const noise = makeNoise(11);
@@ -84,7 +84,7 @@ function draw(ctx, mood, { moon, city }) {
 
   // ---- moon: dithered halo, pale disc, shaded edge, a few craters ----
   if (moon) {
-    const mx = Math.floor(W * 0.88), my = Math.floor(H * 0.2), R = 9;
+    const mx = Math.floor(W * moonAt), my = Math.floor(H * 0.2), R = 9;
     for (let y = my - R - 9; y <= my + R + 9; y++) {
       for (let x = mx - R - 9; x <= mx + R + 9; x++) {
         const d = Math.hypot(x - mx, y - my);
@@ -120,13 +120,45 @@ function draw(ctx, mood, { moon, city }) {
         x += w - 1;
       }
     });
+
+  // ---- rolling hills with pines and fireflies ----
+  if (hills) {
+    const r3 = rng(33);
+    const ri3 = (a, b) => a + Math.floor(r3() * (b - a + 1));
+    let front = [];
+    [
+      { color: "#4a2f7a", base: 0.72, amp: 0.08, seed: 1 },
+      { color: "#3a2562", base: 0.81, amp: 0.07, seed: 2 },
+      { color: "#271a47", base: 0.9,  amp: 0.06, seed: 3 },
+    ].forEach(({ color, base, amp, seed }) => {
+      const n = makeNoise(seed * 13);
+      front = [];
+      for (let x = 0; x < W; x++) {
+        const top = Math.floor(H * (base - amp * n(x * 0.045, seed * 3)));
+        front[x] = top;
+        px(x, top, 1, H - top, color);
+      }
+    });
+
+    // pine trees along the front ridge
+    for (let i = 0; i < 16; i++) {
+      const x = ri3(3, W - 4), h = ri3(8, 15), top = front[x] - h + 2;
+      for (let r = 0; r < h; r++) {
+        const half = Math.floor(r / 3);
+        px(x - half, top + r, half * 2 + 1, 1, "#150d2b");
+      }
+    }
+
+    // fireflies
+    for (let i = 0; i < 14; i++) px(ri3(4, W - 4), ri3(Math.floor(H * 0.72), H - 4), 1, 1, "#ffe29a");
+  }
   }
 }
 
-export default function DuskSky({ mood = "twilight", moon = false, city = false }) {
+export default function DuskSky({ mood = "twilight", moon = false, city = false, hills = false, moonAt = 0.88 }) {
   const ref = useRef(null);
   useEffect(() => {
-    draw(ref.current.getContext("2d"), mood, { moon, city });
-  }, [mood, moon, city]);
+    draw(ref.current.getContext("2d"), mood, { moon, city, hills, moonAt });
+  }, [mood, moon, city, hills, moonAt]);
   return <canvas ref={ref} width={W} height={H} className="pixel-sky" aria-hidden="true" />;
 }

@@ -159,3 +159,34 @@ export const LINKEDIN = [
   "bbbbbbbbbbbb",
   "bbbbbbbbbbbb",
 ];
+
+export const BADGE = [
+  "....aaaaaa....",
+  "..aaooooooaa..",
+  ".aooooooooooa.",
+  "aoooowwwwooooa",
+  "aooowwwwwwoooa",
+  "aoowwwwwwwwooa",
+  "aoowwwwwwwwooa",
+  "aooooooooooooa",
+  "aooooooooooooa",
+  ".aooooooooooa.",
+  "..aooooooooa..",
+  "...aaooooaa...",
+  ".....aaaa.....",
+];
+
+export const HARP = [
+  "bbbbbbbbbbb.",
+  "bb.s.s.s.sb.",
+  "bb.s.s.s.b..",
+  "bb.s.s.sb...",
+  "bb.s.s.b....",
+  "bb.s.sb.....",
+  "bb.s.b......",
+  "bb.sb.......",
+  "bb.b........",
+  "bbb.........",
+  "bb..........",
+  "bbbb........",
+];

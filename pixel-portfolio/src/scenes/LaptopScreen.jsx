@@ -7,6 +7,12 @@ import DuskSky from "../components/DuskSky";
 import Desk from "../components/Desk";
 import LinkIcon from "../components/LinkIcon";
 import { GITHUB, LINKEDIN } from "../components/shapes";
+import CertView from "../components/CertView";
+import WorkView from "../components/WorkView";
+import HarpGame from "../components/HarpGame";
+import HobbiesView from "../components/HobbiesView";
+import ProjectsView from "../components/ProjectsView";
+import BunnySky from "../components/BunnySky";
 
 function FolderView({ folder }) {
   return (
@@ -57,6 +63,7 @@ export default function LaptopScreen() {
       <div className="laptop">
         <div className="lid">
           <div className="screen">
+              <BunnySky />
 <div className="icons">
   {content.folders.map((f) => (
     <DesktopIcon key={f.id} label={f.label} color={f.color} onOpen={() => open(f)} />
@@ -78,19 +85,26 @@ export default function LaptopScreen() {
   />
 </div>
 
-            {wins.map((w) => (
-              <Window
-                key={w.id}
-                win={w}
-                onClose={() => close(w.id)}
-                onMinimize={() => update(w.id, { min: true })}
-                onMaximize={() => update(w.id, { max: !w.max })}
-                onFocus={() => update(w.id, { z: ++topZ.current })}
-                onMove={(x, y) => update(w.id, { x, y })}
-              >
-                <FolderView folder={content.folders.find((f) => f.id === w.id)} />
-              </Window>
-            ))}
+{wins.map((w) => {
+  const folder = content.folders.find((f) => f.id === w.id);
+  return (
+    <Window
+      key={w.id}
+      win={w}
+      onClose={() => close(w.id)}
+      onMinimize={() => update(w.id, { min: true })}
+      onMaximize={() => update(w.id, { max: !w.max })}
+      onFocus={() => update(w.id, { z: ++topZ.current })}
+      onMove={(x, y) => update(w.id, { x, y })}
+    >
+    {w.id === "certs" ? <CertView folder={folder} />
+  : w.id === "work" ? <WorkView folder={folder} />
+  : w.id === "hobbies" ? <HobbiesView folder={folder} onExit={() => close(w.id)} />
+  : w.id === "projects" ? <ProjectsView folder={folder} />
+  : <FolderView folder={folder} />}
+    </Window>
+  );
+})}
 
             {/* minimized windows wait here */}
             <div className="dock">

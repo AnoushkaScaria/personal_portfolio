@@ -11,43 +11,126 @@
     { "label": "Harp", "value": 8 }
   ]
   },
-  "name": "Your Name",
+  "name": "Anoushka Scaria",
   "folders": [
     {
       "id": "projects",
       "label": "Projects",
       "color": "#ff8fa3",
       "items": [
-        { "title": "Project One", "text": "What it is and what you built.", "tags": ["Unity", "C#"] }
-      ]
+        {
+          "title": "Spotify Wrapped",
+          "summary": "A personalized summary of your year on Spotify.",
+          "role": "Implemented user authentication, multi-lingual support, and customizable UI modes",
+          "tags": ["Django", "Python", "Spotify API", "OAuth2.0"],
+          "image": "/photos/spotify_wrapped.jpg",
+          "note": "Group project · Code available on request",
+          "links": []
+      },
+       {
+          "title": "Aquatic Sustainability",
+          "summary": "Identify and visualize water quality data to promote sustainability.",
+          "role": "Implemented a dynamic news page and added water animations across the site",
+          "tags": ["Flask", "Python", "HTML", "CSS", "Google Cloud Platform (GCP)"],
+          "image": "/photos/aquatic_sustain.jpg",
+          "note": "Group project",
+          "links": [{ "label": "Code", "url": "https://github.com/gt-big-data/aquatic-sustainability.git" }]
+      },
+      {
+          "title": "Personal Portfolio",
+          "summary": "Pixel-art desktop you explore as a game character.",
+          "role": "Design + development",
+          "tags": ["React", "Vite", "Canvas"],
+          "image": "/photos/portfolio.jpg",
+          "links": [
+            { "label": "Live site", "url": "https://YOUR-SITE.vercel.app" },
+            { "label": "Code", "url": "https://github.com/AnoushkaScaria/personal_portfolio.git" }
+          ]
+      },
+      {
+        "title": "Dungeons And Felines",
+        "summary": "Unity game where you play as a cat needing to escape a dungeon.",
+        "role": "Scene design and game mechanics",
+        "tags": ["Unity", "C#"],
+        "image": "/photos/box_level.jpg",
+        "links": [{ "label": "Video demo", "url": "https://youtu.be/f8PZQqhvFYo" }]
+      }]
     },
     {
       "id": "work",
       "label": "Work",
       "color": "#7fe0c0",
       "items": [
-        { "title": "Job Title, Company", "text": "What you did.", "tags": [] }
-      ]
+        {
+          "role": "Software Engineer Intern",
+          "company": "Bessemer Trust",
+          "location": "Woodbridge, NJ",
+          "dates": "June 2026 – Aug 2026",
+          "bullets": [
+              "Implemented Ballerina backend endpoints and SQL queries to retrieve and transform data for SmartComm PDF reports used by Client Advisors managing around 3,000 client relationships"
+          ],
+          "tags": ["Ballerina", "SQL", "Choreo", "DBeaver", "React", "Node.js"]
+        },
+        {
+         "role": "Software Engineer Intern",
+          "company": "DataScan (now Solifi)",
+          "location": "Alpharetta, GA",
+          "dates": "May 2025 – Aug 2025",
+          "bullets": [
+            "Automated Confluence test plan generation from Jira issues, reducing manual effort by 45%"
+        ],
+          "tags": ["AI agents", "Amazon Bedrock", "S3", "OpenSearch", "IAM", "MCP"]
+        },
+        {
+          "role": "Teaching Assistant",
+          "company": "Introduction to Discrete Mathematics",
+          "location": "Atlanta, GA",
+          "dates": "Aug 2024 – May 2025",
+          "bullets": [
+            "Collaborated with course professors and teaching assistants to ensure 200+ students learn the material efficiently"
+          ],
+          "tags": ["Logical proofs", "Algorithms", "Mentoring"]
+      }
+    ]
     },
     {
       "id": "certs",
       "label": "Certs",
       "color": "#ffd166",
       "items": [
-        { "title": "Certification Name", "text": "Issuer, year.", "tags": [] }
-      ]
+        {
+          "title": "AWS Certified Cloud Practitioner",
+          "issuer": "Amazon Web Services",
+          "status": "earned",
+          "date": "November 2026",
+          "expires": "November 2029",
+          "credentialId": "4e66aac1100149e9bcacb2f8a8ea5f1a",
+          "url": "https://www.credly.com/badges/9d385fd8-9cee-4cad-8b07-459911e2aa22/public_url",
+          "skills": ["AWS Web Services", "Cloud Concepts", "Cloud Computing", "Cloud Security"]
+        }
+    ]
     },
     {
       "id": "hobbies",
       "label": "Hobbies",
       "color": "#a58cff",
-      "items": [
-        { "title": "Harp", "text": "Music and recordings.", "tags": ["Music"] }
+      "items": [],
+      "pieces": [
+        { "title": "Terzettino",                        "file": "/audio/IMG_8205.mp3" },
+        { "title": "So This Is Love (Cinderella)",      "file": "/audio/IMG_9492.mp3" },
+        { "title": "Theme from Up",                     "file": "/audio/IMG_9536.mp3" },
+        { "title": "Theme from Howl's Moving Castle",   "file": "/audio/IMG_9544.mp3" },
+        { "title": "Moon River",                         "file": "/audio/IMG_9485.mp3" }
+      ],
+      "photos": [
+        { "src": "/photos/all_state.jpg", "caption": "Playing for state orchestras!", "alt": "2 harps" },
+        { "src": "/photos/cat_harp.jpg", "caption": "Cat + Harp", "alt": "Cat loves climbing my harp" },
+        { "src": "/photos/gyso.jpg", "caption": "Preparing for an orchestra solo :0", "alt": "Youth orchestra" }
       ]
-    }
+  }
   ],
   "links": [
     { "id": "github", "label": "GitHub", "url": "https://github.com/AnoushkaScaria" },
-    { "id": "linkedin", "label": "LinkedIn", "url": "https://linkedin.com/in/anoushka-scaria-0a8080313" }
+    { "id": "linkedin", "label": "LinkedIn", "url": "https://linkedin.com/in/anoushkascaria" }
   ]
 }
