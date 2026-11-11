@@ -43,7 +43,6 @@
           "tags": ["React", "Vite", "Canvas"],
           "image": "/photos/portfolio.jpg",
           "links": [
-            { "label": "Live site", "url": "anoushkascaria.com" },
             { "label": "Code", "url": "https://github.com/AnoushkaScaria/personal_portfolio.git" }
           ]
       },
